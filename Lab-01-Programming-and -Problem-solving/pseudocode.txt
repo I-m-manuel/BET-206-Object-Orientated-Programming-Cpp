@@ -1,0 +1,11 @@
+START
+    DECLARE x AS STRING
+    
+    READ x
+    
+    IF x EQUALS "Hello" THEN
+        PRINT "Hello"
+    ELSE
+        PRINT "Goodbye!"
+    ENDIF
+END
