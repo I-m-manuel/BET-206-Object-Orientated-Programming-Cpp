@@ -1,0 +1,11 @@
+/*Check if a String Equals "Hello"*/
+
+​Start
+​Declare a string variable named x.
+​Read/Input a line of text from the user and store it in variable x.
+​Check the condition:
+​If x is exactly equal to "Hello", then:
+​Output/Print "Hello".
+​Else (if x is anything else), then:
+​Output/Print "Goodbye!".
+​End
