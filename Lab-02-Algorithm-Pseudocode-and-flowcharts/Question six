@@ -1,0 +1,113 @@
+/* Transformer Ratio Calculator Menu*/
+
+#include <iostream>
+using namespace std;
+
+int main(){
+	
+	int choice ;
+	double pt, st, pv, sv;
+	cout <<"1. Turns ratio\n2. Secondary voltage\n3. Primary voltage\Enter choice: ";
+	cin>> choice;
+	
+	switch(choice) {
+		case 1:
+			cout <<"Enter primary and Secondary turns: "; cin>> pt >> st;
+			cout <<"Turns Ratio:" << pt / st << endl; break;
+			
+			case 2:
+				cout <<"Enter Primary voltage, Secondary turns, Primary turns: "; cin>> pv >> st >> pt;
+				cout <<"Secondary Voltage: " << (pv * st) / pt << "V" << endl; break;
+				
+				case 3:
+					cout <<"Enter Secondary voltage, Primary turns, Secondary turns: "; cin >> sv >> pt >> st;
+					cout <<"Primary voltage: " << (sv * pt) / st << "V" << endl; break;
+					
+					default: cout <<"Invalid choice." << endl;
+	}
+	
+	
+	return 0;
+}
+
+# Question 6: Series Resistor Calculator
+## Algorithm
+
+**Step 1:** START
+
+**Step 2:** Display program title: "Series Resistor Calculator"
+
+**Step 3:** Declare variables: `resistorValue` (double), `totalResistance` (double, initialised to 0), `i` (int)
+
+**Step 4:** Prompt user that 5 resistor values will be entered
+
+**Step 5:** Use a for loop from i = 1 to 5:
+   - Prompt: "Enter value of Resistor Ri (in Ohms):"
+   - Read `resistorValue`
+   - Add `resistorValue` to `totalResistance`
+
+**Step 6:** After the loop, display the total resistance in Ohms
+
+**Step 7:** END
+
+# Question 6: Series Resistor Calculator
+## Pseudocode
+
+```
+BEGIN
+
+    DECLARE resistorValue AS REAL
+    DECLARE totalResistance AS REAL = 0
+    DECLARE i AS INTEGER
+
+    DISPLAY "Series Resistor Calculator"
+    DISPLAY "Enter the values of 5 resistors:"
+
+    FOR i = 1 TO 5 DO
+        DISPLAY "Enter value of Resistor R", i, "(in Ohms):"
+        INPUT resistorValue
+        totalResistance = totalResistance + resistorValue
+    END FOR
+
+    DISPLAY "Total Series Resistance =", totalResistance, "Ohms"
+
+END
+```
+# Question 6: Series Resistor Calculator
+## Flowchart (ASCII Text-Based)
+
+```
+        +------------------+
+        |      START       |
+        +------------------+
+                 |
+                 v
+        +-------------------------------+
+        | DECLARE resistorValue         |
+        | totalResistance = 0           |
+        | i = 1                         |
+        +-------------------------------+
+                 |
+                 v
+        +------------------+
+        |    i <= 5 ?      |---NO---> [ DISPLAY totalResistance in Ohms ]
+        +------------------+                      |
+                 | YES                             v
+                 v                        +------------------+
+        +---------------------------+     |       END        |
+        | INPUT resistorValue (Ohms)|     +------------------+
+        +---------------------------+
+                 |
+                 v
+        +------------------------------------------+
+        | totalResistance = totalResistance +       |
+        |                   resistorValue           |
+        +------------------------------------------+
+                 |
+                 v
+        +------------------+
+        |    i = i + 1     |
+        +------------------+
+                 |
+                 (back to i <= 5 check)
+```
