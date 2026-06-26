@@ -1,0 +1,127 @@
+/*Repeated Ohm's Law Calculator*/
+
+#include <iostream>
+using namespace std;
+
+int main(){
+	
+	char choice;
+	float v, i;
+	do {
+		cout << "Enter voltage and current : ";
+		cin >> v >> i;
+		cout <<"Resistance =" << (v/i) << " Ohms" << endl;
+		cout <<"Do you want to continue? (Y/N):";
+		cin >> choice;
+	} while (choice != 'N' && choice != 'n');
+	
+	
+	
+	
+	return 0;
+} 
+
+# Question 15: Electrical Load Limit Checker
+## Algorithm
+
+**Step 1:** START
+
+**Step 2:** Declare `appliancePower`, `totalLoad = 0`, `applianceCount = 0`, `loadLimit = 3000`
+
+**Step 3:** Display title and load limit (3000 W)
+
+**Step 4:** WHILE totalLoad <= 3000 DO:
+   - Input `appliancePower`
+   - `totalLoad = totalLoad + appliancePower`
+   - Increment `applianceCount`
+   - Display current total load
+   - IF totalLoad > 3000 THEN:
+       - Display "Load limit exceeded. Do not add more appliances."
+       - BREAK
+
+**Step 5:** Display final total load and appliance count
+
+**Step 6:** END
+
+# Question 15: Electrical Load Limit Checker
+## Pseudocode
+
+```
+BEGIN
+
+    DECLARE appliancePower AS REAL
+    DECLARE totalLoad AS REAL = 0
+    DECLARE applianceCount AS INTEGER = 0
+    DECLARE loadLimit AS REAL = 3000
+
+    DISPLAY "Electrical Load Limit Checker (limit = 3000 W)"
+
+    WHILE totalLoad <= loadLimit DO
+        DISPLAY "Enter appliance power rating (in Watts):"
+        INPUT appliancePower
+
+        totalLoad = totalLoad + appliancePower
+        applianceCount = applianceCount + 1
+
+        DISPLAY "Total Load so far:", totalLoad, "W"
+
+        IF totalLoad > loadLimit THEN
+            DISPLAY "Load limit exceeded. Do not add more appliances."
+            BREAK
+        END IF
+
+        DISPLAY "Load within limit. You may add more."
+
+    END WHILE
+
+    DISPLAY "Total Appliances :", applianceCount
+    DISPLAY "Final Total Load :", totalLoad, "W"
+
+END
+```
+# Question 15: Electrical Load Limit Checker
+## Flowchart (ASCII Text-Based)
+
+```
+        +------------------+
+        |      START       |
+        +------------------+
+                 |
+                 v
+        +-------------------------------+
+        | totalLoad = 0                 |
+        | applianceCount = 0            |
+        | loadLimit = 3000              |
+        +-------------------------------+
+                 |
+                 v
+        +-----------------------------+
+        | totalLoad <= 3000 ?         |---NO---> [ DISPLAY final summary ]
+        +-----------------------------+                    |
+                 | YES                                     v
+                 v                              +------------------+
+        +---------------------------+           |       END        |
+        | INPUT appliancePower (W)  |           +------------------+
+        +---------------------------+
+                 |
+                 v
+        +------------------------------------------+
+        | totalLoad = totalLoad + appliancePower   |
+        | applianceCount = applianceCount + 1      |
+        +------------------------------------------+
+                 |
+                 v
+        +---------------------------+
+        | DISPLAY totalLoad         |
+        +---------------------------+
+                 |
+                 v
+        +-----------------------------+
+        | totalLoad > 3000 ?          |---YES---> [ DISPLAY "Load limit
+        +-----------------------------+            exceeded." ] --> BREAK
+                 | NO
+                 v
+        [ DISPLAY "Load within limit." ]
+                 |
+                 (back to while check)
+```
