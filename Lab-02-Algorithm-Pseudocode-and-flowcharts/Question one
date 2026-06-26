@@ -1,0 +1,151 @@
+/*Power Factor Status Checker*/
+
+#include <iostream>
+using namespace std;
+
+int main(){
+	
+	double pf;
+	cout << "Enter power factor (0 to 1):";
+	cin >> pf;
+	
+	if(pf < 0 || pf >1){
+		cout << "Invalid power factor";
+	}
+	else if (pf <= 0.50) {
+		cout <<"Poor power factor";
+	}
+	else if (pf <= 0.80) {
+		cout << "Fair power factor";
+	}
+	else if (pf <= 0.95) {
+		cout << "Good power factor";
+	}
+	else{
+		cout <<"Excellent power factor";
+	}
+	
+	
+	return 0;
+}
+
+
+# Question 1: Voltage Level Classifier
+## Algorithm
+
+**Step 1:** START
+
+**Step 2:** Display program title: "Voltage Level Classifier"
+
+**Step 3:** Declare a variable called `voltage` of type double
+
+**Step 4:** Prompt the user: "Enter the voltage reading (in Volts):"
+
+**Step 5:** Read the voltage value entered by the user
+
+**Step 6:** Check if voltage is less than 0
+   - If YES → Display "Invalid voltage reading" → Go to Step 12
+
+**Step 7:** Check if voltage is between 0 V and 50 V (inclusive)
+   - If YES → Display "Low voltage" → Go to Step 12
+
+**Step 8:** Check if voltage is between 51 V and 240 V (inclusive)
+   - If YES → Display "Normal voltage" → Go to Step 12
+
+**Step 9:** Check if voltage is between 241 V and 415 V (inclusive)
+   - If YES → Display "High voltage" → Go to Step 12
+
+**Step 10:** Check if voltage is above 415 V
+   - If YES → Display "Dangerous voltage" → Go to Step 12
+
+**Step 11:** (All conditions covered above)
+
+**Step 12:** Display the voltage value with classification result
+
+**Step 13:** END
+
+	# Question 1: Voltage Level Classifier
+## Pseudocode
+
+```
+BEGIN
+
+    DECLARE voltage AS REAL
+
+    DISPLAY "Voltage Level Classifier"
+    DISPLAY "Enter the voltage reading (in Volts):"
+    INPUT voltage
+
+    IF voltage < 0 THEN
+        DISPLAY "Invalid voltage reading"
+
+    ELSE IF voltage >= 0 AND voltage <= 50 THEN
+        DISPLAY "Low voltage"
+
+    ELSE IF voltage >= 51 AND voltage <= 240 THEN
+        DISPLAY "Normal voltage"
+
+    ELSE IF voltage >= 241 AND voltage <= 415 THEN
+        DISPLAY "High voltage"
+
+    ELSE
+        DISPLAY "Dangerous voltage"
+
+    END IF
+
+END
+```
+# Question 1: Voltage Level Classifier
+## Flowchart (ASCII Text-Based)
+
+```
+        +------------------+
+        |      START       |
+        +------------------+
+                 |
+                 v
+        +------------------+
+        | DECLARE voltage  |
+        +------------------+
+                 |
+                 v
+        +---------------------------+
+        | INPUT voltage (in Volts)  |
+        +---------------------------+
+                 |
+                 v
+        +------------------+
+        | voltage < 0 ?    |---YES---> [ DISPLAY "Invalid voltage reading" ]
+        +------------------+                          |
+                 | NO                                 |
+                 v                                    |
+        +------------------+                         |
+        | 0 <= voltage <=  |---YES---> [ DISPLAY "Low voltage" ]
+        |      50 ?        |                          |
+        +------------------+                         |
+                 | NO                                 |
+                 v                                    |
+        +------------------+                         |
+        | 51 <= voltage <= |---YES---> [ DISPLAY "Normal voltage" ]
+        |      240 ?       |                          |
+        +------------------+                         |
+                 | NO                                 |
+                 v                                    |
+        +------------------+                         |
+        | 241 <= voltage   |---YES---> [ DISPLAY "High voltage" ]
+        |    <= 415 ?      |                          |
+        +------------------+                         |
+                 | NO                                 |
+                 v                                    |
+        +---------------------------+                 |
+        | DISPLAY "Dangerous        |                 |
+        |          voltage"         |                 |
+        +---------------------------+                 |
+                 |                                    |
+                 +------------------------------------+
+                 |
+                 v
+        +------------------+
+        |       END        |
+        +------------------+
+```
