@@ -1,0 +1,99 @@
+/*Total Power of Lighting Points*/
+
+#include <iostream>
+using namespace std;
+
+int main(){
+	
+	double wattage, total = 0;
+	for(int i = 1; i <= 12; i++) {
+		cout <<"Enter wattage of lighting point " <<i << ": ";
+		cin >> wattage;
+		total += wattage;
+	}
+	
+	cout << "Total lighting load: " << total <<  "Watts" << endl;
+	
+	return 0;
+}
+
+# Question 7: Average Voltage from Sensor Readings
+## Algorithm
+
+**Step 1:** START
+
+**Step 2:** Declare `voltageReading`, `totalVoltage = 0`, `averageVoltage`, `i`
+
+**Step 3:** Display prompt for 10 readings
+
+**Step 4:** FOR i = 1 TO 10:
+   - Input `voltageReading`
+   - `totalVoltage = totalVoltage + voltageReading`
+
+**Step 5:** `averageVoltage = totalVoltage / 10`
+
+**Step 6:** Display `totalVoltage` and `averageVoltage` in V
+
+**Step 7:** END
+
+# Question 7: Average Voltage from Sensor Readings
+## Pseudocode
+
+```
+BEGIN
+
+    DECLARE voltageReading AS REAL
+    DECLARE totalVoltage AS REAL = 0
+    DECLARE averageVoltage AS REAL
+    DECLARE i AS INTEGER
+
+    DISPLAY "Enter 10 voltage readings:"
+
+    FOR i = 1 TO 10 DO
+        DISPLAY "Enter Reading", i, "(in Volts):"
+        INPUT voltageReading
+        totalVoltage = totalVoltage + voltageReading
+    END FOR
+
+    averageVoltage = totalVoltage / 10
+
+    DISPLAY "Total Voltage   =", totalVoltage, "V"
+    DISPLAY "Average Voltage =", averageVoltage, "V"
+
+END
+```
+# Question 7: Average Voltage from Sensor Readings
+## Flowchart (ASCII Text-Based)
+
+```
+        +------------------+
+        |      START       |
+        +------------------+
+                 |
+                 v
+        +------------------------------+
+        | totalVoltage = 0, i = 1      |
+        +------------------------------+
+                 |
+                 v
+        +------------------+
+        |    i <= 10 ?     |---NO---> [ averageVoltage = totalVoltage / 10 ]
+        +------------------+                        |
+                 | YES                               v
+                 v                     [ DISPLAY totalVoltage, averageVoltage ]
+        +---------------------------+               |
+        | INPUT voltageReading (V)  |               v
+        +---------------------------+       +------------------+
+                 |                          |       END        |
+                 v                          +------------------+
+        +------------------------------------------+
+        | totalVoltage = totalVoltage + voltageReading |
+        +------------------------------------------+
+                 |
+                 v
+        +------------------+
+        |    i = i + 1     |
+        +------------------+
+                 |
+                 (back to i <= 10 check)
+```
