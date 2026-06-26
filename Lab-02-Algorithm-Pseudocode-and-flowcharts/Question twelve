@@ -1,0 +1,132 @@
+/* Solar Panel Voltage*/
+
+#include <iostream>
+using namespace std;
+
+int main(){
+	
+	float  voltage = 18;
+	while (voltage >= 18){
+		cout <<"Enter solar panel voltage: ";
+		cin>> voltage;
+		if (voltage < 18) {
+			cout <<"Solar panel voltage below operating level"<< endl;
+		}
+	}
+	
+	
+	return 0;
+}
+
+# Question 12: Menu-Driven Electrical Calculator
+## Algorithm
+
+**Step 1:** START
+
+**Step 2:** Declare variables: `choice`, `voltage`, `current`, `power`, `time`, `resistance`, `energy`
+
+**Step 3:** DO the following:
+   a. Display menu: 1-Power, 2-Resistance, 3-Energy, 4-Exit
+   b. Input `choice`
+   c. SWITCH on `choice`:
+      - Case 1: Input V and I → Power = V × I → Display in W
+      - Case 2: Input V and I → Resistance = V / I → Display in Ohms
+      - Case 3: Input P and T → Energy = P × T → Display in Wh
+      - Case 4: Display "Exiting..."
+      - Default: Display "Invalid selection"
+
+**Step 4:** WHILE choice != 4 (keep repeating menu)
+
+**Step 5:** END
+
+# Question 12: Menu-Driven Electrical Calculator
+## Pseudocode
+
+```
+BEGIN
+
+    DECLARE choice AS INTEGER
+    DECLARE voltage, current, power, time, resistance, energy AS REAL
+
+    DO
+        DISPLAY "1. Calculate Power"
+        DISPLAY "2. Calculate Resistance"
+        DISPLAY "3. Calculate Energy"
+        DISPLAY "4. Exit"
+        INPUT choice
+
+        SWITCH choice
+            CASE 1:
+                INPUT voltage, current
+                power = voltage * current
+                DISPLAY "Power =", power, "W"
+
+            CASE 2:
+                INPUT voltage, current
+                IF current = 0 THEN
+                    DISPLAY "Error: Current cannot be zero."
+                ELSE
+                    resistance = voltage / current
+                    DISPLAY "Resistance =", resistance, "Ohms"
+                END IF
+
+            CASE 3:
+                INPUT power, time
+                energy = power * time
+                DISPLAY "Energy =", energy, "Wh"
+
+            CASE 4:
+                DISPLAY "Exiting..."
+
+            DEFAULT:
+                DISPLAY "Invalid selection."
+        END SWITCH
+
+    WHILE choice != 4
+
+END
+```
+# Question 12: Menu-Driven Electrical Calculator
+## Flowchart (ASCII Text-Based)
+
+```
+        +------------------+
+        |      START       |
+        +------------------+
+                 |
+                 v
+    +------------------------+  <-----------+
+    | DISPLAY Menu           |              |
+    | 1-Power, 2-Resistance, |              |
+    | 3-Energy, 4-Exit       |              |
+    +------------------------+              |
+                 |                          |
+                 v                          |
+    +---------------------------+           |
+    | INPUT choice              |           |
+    +---------------------------+           |
+                 |                          |
+                 v                          |
+    +---------------------------+           |
+    |    SWITCH (choice)        |           |
+    +---------------------------+           |
+      |      |      |      |                |
+      1      2      3      4  (default)     |
+      |      |      |      |      |         |
+      v      v      v      v      v         |
+   [Power][Resist][Energy][Exit][Invalid]   |
+      |      |      |      |                |
+      v      v      v      |                |
+   [Calc] [Calc] [Calc]   |                |
+   [Display result]       |                |
+                          |                |
+                          v                |
+                 +------------------+      |
+                 | choice != 4 ?    |--YES-+
+                 +------------------+
+                          | NO
+                          v
+                 +------------------+
+                 |       END        |
+                 +------------------+
+```
