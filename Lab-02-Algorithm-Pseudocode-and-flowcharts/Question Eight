@@ -1,0 +1,110 @@
+/*Average Current of 3 Phase Readings*/
+
+#include<iostream>
+using namespace std;
+
+int main(){
+	
+	double l1, l2, l3;
+	for(int i=1; i <= 6; i++) {
+		cout <<"Set " << i <<" - Enter currrent for line 1, 2, and 3: ";
+		cin >> l1 >> l2 >> l3;
+		cout <<" Average current for set " <<i <<":" << (l1 + l2 + l3) / 3.0 <<" A " << endl;
+	}
+	
+	
+	return 0;
+}
+
+# Question 8: Count Safe Current Readings
+## Algorithm
+
+**Step 1:** START
+
+**Step 2:** Declare `currentReading`, `safeCount = 0`, `unsafeCount = 0`, `i`
+
+**Step 3:** Display heading and safe limit (10 A)
+
+**Step 4:** FOR i = 1 TO 8:
+   - Input `currentReading`
+   - IF `currentReading <= 10` THEN
+       - Display "SAFE", increment `safeCount`
+   - ELSE
+       - Display "UNSAFE", increment `unsafeCount`
+
+**Step 5:** Display `safeCount` and `unsafeCount`
+
+**Step 6:** END
+
+# Question 8: Count Safe Current Readings
+## Pseudocode
+
+```
+BEGIN
+
+    DECLARE currentReading AS REAL
+    DECLARE safeCount AS INTEGER = 0
+    DECLARE unsafeCount AS INTEGER = 0
+    DECLARE i AS INTEGER
+
+    DISPLAY "Enter 8 current readings:"
+
+    FOR i = 1 TO 8 DO
+        DISPLAY "Enter Current Reading", i, "(in Amperes):"
+        INPUT currentReading
+
+        IF currentReading <= 10 THEN
+            DISPLAY "SAFE"
+            safeCount = safeCount + 1
+        ELSE
+            DISPLAY "UNSAFE"
+            unsafeCount = unsafeCount + 1
+        END IF
+
+    END FOR
+
+    DISPLAY "Safe Readings   :", safeCount
+    DISPLAY "Unsafe Readings :", unsafeCount
+
+END
+```
+# Question 8: Count Safe Current Readings
+## Flowchart (ASCII Text-Based)
+
+```
+        +------------------+
+        |      START       |
+        +------------------+
+                 |
+                 v
+        +-------------------------------+
+        | safeCount = 0                 |
+        | unsafeCount = 0, i = 1        |
+        +-------------------------------+
+                 |
+                 v
+        +------------------+
+        |    i <= 8 ?      |---NO---> [ DISPLAY safeCount, unsafeCount ]
+        +------------------+                      |
+                 | YES                             v
+                 v                        +------------------+
+        +---------------------------+     |       END        |
+        | INPUT currentReading (A)  |     +------------------+
+        +---------------------------+
+                 |
+                 v
+        +---------------------------+
+        | currentReading <= 10 ?    |
+        +---------------------------+
+           YES |             | NO
+               v             v
+        [safeCount++]  [unsafeCount++]
+        [DISP SAFE]    [DISP UNSAFE]
+               |             |
+               +------+------+
+                      |
+                      v
+              [ i = i + 1 ]
+                      |
+               (back to loop)
+```
