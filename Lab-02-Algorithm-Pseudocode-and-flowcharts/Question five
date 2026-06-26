@@ -1,0 +1,122 @@
+/*Measurement Unit Conversion*/
+
+#include <iostream>
+using namespace std;
+
+int main(){
+	int choice;
+	double val;
+	cout <<"1.Volts to millivolts\n2. Amperes to milliamperes\n3. Kilowattsto watts\n4. Ohms to kilo-ohms\nEnter choice: ";
+	cin >> choice;
+	cout <<"Enter value:";
+	cin >> val;
+	
+	switch(choice) {
+		case 1: cout << val << "V = " << val * 1000 << "mV" << endl; break;
+		case 2: cout << val << "A = " << val * 1000 << "mA" << endl; break;
+		case 3: cout << val << "kW = " << val * 1000 <<"W" << endl; break;
+		case 4: cout << val << "Ohms =" << val / 1000 << "kOhms" <<endl; break;
+		default: cout << "Invalid choice." << endl;
+	}
+	
+	return 0;
+}
+
+# Question 5: Power Rating Menu
+## Algorithm
+
+**Step 1:** START
+
+**Step 2:** Display program title and menu options (1, 2, 3)
+
+**Step 3:** Declare variables: `choice`, `voltage`, `current`, `power`, `time`, `resistance`, `energy`
+
+**Step 4:** Accept user's menu `choice`
+
+**Step 5:** Use switch:
+   - Case 1: Input voltage and current → Calculate Power = Voltage × Current → Display result in W
+   - Case 2: Input voltage and current → Calculate Resistance = Voltage / Current → Display result in Ohms
+   - Case 3: Input power and time → Calculate Energy = Power × Time → Display result in Wh
+   - Default: Display "Invalid selection"
+
+**Step 6:** END
+# Question 5: Power Rating Menu
+## Pseudocode
+
+```
+BEGIN
+
+    DECLARE choice AS INTEGER
+    DECLARE voltage, current, power, time, resistance, energy AS REAL
+
+    DISPLAY "Power Rating Calculator Menu"
+    DISPLAY "1. Calculate DC Power"
+    DISPLAY "2. Calculate Resistance using Ohm's Law"
+    DISPLAY "3. Calculate Energy Consumption"
+    INPUT choice
+
+    SWITCH choice
+        CASE 1:
+            INPUT voltage, current
+            power = voltage * current
+            DISPLAY "DC Power =", power, "W"
+
+        CASE 2:
+            INPUT voltage, current
+            IF current = 0 THEN
+                DISPLAY "Error: Current cannot be zero."
+            ELSE
+                resistance = voltage / current
+                DISPLAY "Resistance =", resistance, "Ohms"
+            END IF
+
+        CASE 3:
+            INPUT power, time
+            energy = power * time
+            DISPLAY "Energy =", energy, "Wh"
+
+        DEFAULT:
+            DISPLAY "Invalid selection."
+    END SWITCH
+
+END
+```
+# Question 5: Power Rating Menu
+## Flowchart (ASCII Text-Based)
+
+```
+        +------------------+
+        |      START       |
+        +------------------+
+                 |
+                 v
+        +------------------------------+
+        | DISPLAY Calculation Menu     |
+        | 1-Power, 2-Resistance,       |
+        | 3-Energy                     |
+        +------------------------------+
+                 |
+                 v
+        +---------------------------+
+        | INPUT choice              |
+        +---------------------------+
+                 |
+                 v
+        +---------------------------+
+        |    SWITCH (choice)        |
+        +---------------------------+
+         |         |         |      |
+         1         2         3   default
+         |         |         |      |
+         v         v         v      v
+      [Power]  [Resistance][Energy][Invalid]
+      P=V*I    R=V/I      E=P*t
+         |         |         |
+         v         v         v
+      [Display result with units]
+                 |
+                 v
+        +------------------+
+        |       END        |
+        +------------------+
+```
