@@ -1,0 +1,102 @@
+/* Question 11 */
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    float temperature;
+
+    cout << "Enter motor temperature: ";
+    cin >> temperature;
+
+    while (temperature <= 90)
+    {
+        cout << "Enter motor temperature: ";
+        cin >> temperature;
+    }
+
+    cout << "Motor temperature unsafe. Stop motor test." << endl;
+
+    return 0;
+}
+
+# Question 11: Password Access to Control Panel
+## Algorithm
+
+**Step 1:** START
+
+**Step 2:** Declare `password` as integer; set `correctPassword = 2080`
+
+**Step 3:** Display title and prompt user to enter password
+
+**Step 4:** Input `password`
+
+**Step 5:** WHILE password != 2080 DO:
+   - Display "Incorrect password. Please try again."
+   - Input `password` again
+
+**Step 6:** After loop (correct password entered):
+   - Display "Access granted to control panel."
+
+**Step 7:** END
+
+# Question 11: Password Access to Control Panel
+## Pseudocode
+
+```
+BEGIN
+
+    DECLARE password AS INTEGER
+    DECLARE correctPassword AS INTEGER = 2080
+
+    DISPLAY "Control Panel Access System"
+    DISPLAY "Enter password:"
+    INPUT password
+
+    WHILE password != correctPassword DO
+        DISPLAY "Incorrect password. Please try again."
+        DISPLAY "Enter password:"
+        INPUT password
+    END WHILE
+
+    DISPLAY "Access granted to control panel."
+
+END
+```
+# Question 11: Password Access to Control Panel
+## Flowchart (ASCII Text-Based)
+
+```
+        +------------------+
+        |      START       |
+        +------------------+
+                 |
+                 v
+        +---------------------------+
+        | correctPassword = 2080    |
+        +---------------------------+
+                 |
+                 v
+        +---------------------------+
+        | INPUT password            |
+        +---------------------------+
+                 |
+                 v
+        +------------------------------+
+        | password != correctPassword? |---NO---> [ DISPLAY "Access granted
+        +------------------------------+           to control panel." ]
+                 | YES                                      |
+                 v                                          v
+        +---------------------------+            +------------------+
+        | DISPLAY "Incorrect        |            |       END        |
+        | password. Try again."     |            +------------------+
+        +---------------------------+
+                 |
+                 v
+        +---------------------------+
+        | INPUT password            |
+        +---------------------------+
+                 |
+                 (back to password check)
+```
