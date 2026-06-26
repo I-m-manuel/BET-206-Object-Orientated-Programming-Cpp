@@ -1,0 +1,130 @@
+/*Laboratory login attempt*/
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main(){
+	string code;
+	int attempts = 0;
+	while (attempts < 3) {
+		cout <<"Enter laboratory access code: ";
+		cin >> code;
+		if (code == "BEE208") {
+			cout <<"Access granted." << endl;
+			return 0;
+		}
+		attempts++;
+	}
+	cout <<"Access denied. Maximum attempts reached." << endl;
+	
+	return 0;
+}
+
+# Question 14: Skip Invalid Temperature Readings Using Continue
+## Algorithm
+
+**Step 1:** START
+
+**Step 2:** Declare `temperature`, `totalTemp = 0`, `validCount = 0`, `invalidCount = 0`, `averageTemp`, `i`
+
+**Step 3:** Display title and invalid threshold (below 0 °C)
+
+**Step 4:** FOR i = 1 TO 10 DO:
+   - Input `temperature`
+   - IF temperature < 0 THEN:
+       - Display "INVALID (skipped)"
+       - Increment `invalidCount`
+       - CONTINUE (skip to next iteration)
+   - Display "Valid"
+   - Add `temperature` to `totalTemp`
+   - Increment `validCount`
+
+**Step 5:** IF validCount > 0:
+   - `averageTemp = totalTemp / validCount`
+   - Display `averageTemp` in °C
+   - ELSE: Display "No valid readings"
+
+**Step 6:** END
+
+# Question 14: Skip Invalid Temperature Readings Using Continue
+## Pseudocode
+
+```
+BEGIN
+
+    DECLARE temperature AS REAL
+    DECLARE totalTemp AS REAL = 0
+    DECLARE validCount AS INTEGER = 0
+    DECLARE invalidCount AS INTEGER = 0
+    DECLARE averageTemp AS REAL
+    DECLARE i AS INTEGER
+
+    DISPLAY "Enter 10 temperature readings (invalid = below 0 C):"
+
+    FOR i = 1 TO 10 DO
+        DISPLAY "Enter Temperature Reading", i, "(in degrees C):"
+        INPUT temperature
+
+        IF temperature < 0 THEN
+            DISPLAY "INVALID (skipped)"
+            invalidCount = invalidCount + 1
+            CONTINUE
+        END IF
+
+        DISPLAY temperature, "C - Valid"
+        totalTemp = totalTemp + temperature
+        validCount = validCount + 1
+
+    END FOR
+
+    IF validCount > 0 THEN
+        averageTemp = totalTemp / validCount
+        DISPLAY "Average Temperature =", averageTemp, "degrees C"
+    ELSE
+        DISPLAY "No valid readings. Average cannot be calculated."
+    END IF
+
+END
+```
+# Question 14: Skip Invalid Temperature Readings Using Continue
+## Flowchart (ASCII Text-Based)
+
+```
+        +------------------+
+        |      START       |
+        +------------------+
+                 |
+                 v
+        +-------------------------------+
+        | totalTemp=0, validCount=0     |
+        | invalidCount=0, i=1           |
+        +-------------------------------+
+                 |
+                 v
+        +------------------+
+        |    i <= 10 ?     |---NO---> [ Calculate average if validCount > 0 ]
+        +------------------+                        |
+                 | YES                               v
+                 v                         [ DISPLAY average temp ]
+        +---------------------------+               |
+        | INPUT temperature (C)     |               v
+        +---------------------------+       +------------------+
+                 |                          |       END        |
+                 v                          +------------------+
+        +---------------------------+
+        | temperature < 0 ?         |
+        +---------------------------+
+           YES |              | NO
+               v              v
+    +------------------+  +---------------------------+
+    | DISPLAY "INVALID"|  | DISPLAY "Valid"           |
+    | invalidCount++   |  | totalTemp += temperature  |
+    | CONTINUE         |  | validCount++              |
+    +------------------+  +---------------------------+
+        (next i)               |
+                               v
+                          [ i = i + 1 ]
+                               |
+                          (back to loop)
+```
