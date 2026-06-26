@@ -1,0 +1,115 @@
+/* Earth Resistance Test*/
+
+#include <iostream>
+using namespace std;
+
+int main(){
+	
+	float resistance = 0;
+	while (resistance <= 5) {
+		cout <<" Enter earth resistance: ";
+		cin >> resistance;
+		if (resistance > 5) {
+			cout << " Earth resistance too high. Improve earthing system." << endl;
+		}		
+	}
+	
+	
+	
+	return 0;
+}
+
+# Question 13: Stop Test on Low Battery Using Break
+## Algorithm
+
+**Step 1:** START
+
+**Step 2:** Declare `batteryVoltage` as double, `i` as integer
+
+**Step 3:** Display title and low battery threshold (10.5 V)
+
+**Step 4:** FOR i = 1 TO 10 DO:
+   - Input `batteryVoltage`
+   - IF batteryVoltage < 10.5 THEN:
+       - Display "Low battery detected. Test stopped."
+       - BREAK (exit loop immediately)
+   - ELSE:
+       - Display "Battery voltage normal."
+
+**Step 5:** Display "Battery test complete."
+
+**Step 6:** END
+
+# Question 13: Stop Test on Low Battery Using Break
+## Pseudocode
+
+```
+BEGIN
+
+    DECLARE batteryVoltage AS REAL
+    DECLARE i AS INTEGER
+
+    DISPLAY "Battery Voltage Test (threshold = 10.5 V)"
+
+    FOR i = 1 TO 10 DO
+        DISPLAY "Enter Battery Voltage Reading", i, "(in Volts):"
+        INPUT batteryVoltage
+
+        IF batteryVoltage < 10.5 THEN
+            DISPLAY "Low battery detected. Test stopped."
+            BREAK
+        ELSE
+            DISPLAY "Battery voltage normal."
+        END IF
+
+    END FOR
+
+    DISPLAY "Battery test complete."
+
+END
+```
+# Question 13: Stop Test on Low Battery Using Break
+## Flowchart (ASCII Text-Based)
+
+```
+        +------------------+
+        |      START       |
+        +------------------+
+                 |
+                 v
+        +------------------+
+        |    i = 1         |
+        +------------------+
+                 |
+                 v
+        +------------------+
+        |    i <= 10 ?     |---NO---> [ DISPLAY "Battery test complete." ]
+        +------------------+                      |
+                 | YES                             v
+                 v                        +------------------+
+        +---------------------------+     |       END        |
+        | INPUT batteryVoltage (V)  |     +------------------+
+        +---------------------------+
+                 |
+                 v
+        +-----------------------------+
+        | batteryVoltage < 10.5 ?     |
+        +-----------------------------+
+           YES |                 | NO
+               v                 v
+    +----------------------+  +---------------------------+
+    | DISPLAY "Low battery |  | DISPLAY "Battery voltage  |
+    | detected. Test       |  |  normal."                 |
+    | stopped."            |  +---------------------------+
+    +----------------------+        |
+               |                    v
+           [BREAK]             [ i = i + 1 ]
+               |                    |
+               v                    (back to i <= 10)
+    [ DISPLAY "Battery test complete." ]
+               |
+               v
+        +------------------+
+        |       END        |
+        +------------------+
+```
