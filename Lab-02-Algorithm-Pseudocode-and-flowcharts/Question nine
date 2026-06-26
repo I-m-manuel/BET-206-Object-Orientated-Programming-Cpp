@@ -1,0 +1,91 @@
+/*Count passed component tests*/
+
+#include <iostream>
+using namespace std;
+
+int main(){
+	
+	int input, pass = 0, fail = 0;
+	for(int i=i; i<= 15; i++) {
+		cout <<"Component" << i << " (1 for pass , 0 for fail):";
+		cin >> input;
+		if(input == 1) pass++;
+		else fail++;
+	}
+	cout <<"Passed: " << pass << ", Failed: " << fail << endl;
+	return 0;
+}
+
+# Question 9: Current Monitoring System
+## Algorithm
+
+**Step 1:** START
+
+**Step 2:** Declare variable `current` as double
+
+**Step 3:** Display title and safe limit (10 A)
+
+**Step 4:** Input first current reading
+
+**Step 5:** WHILE current <= 10 DO:
+   - Display "SAFE" message with current value
+   - Input next current reading
+
+**Step 6:** When loop ends (current > 10):
+   - Display "Overcurrent detected. Monitoring stopped."
+
+**Step 7:** END
+
+# Question 9: Current Monitoring System
+## Pseudocode
+
+```
+BEGIN
+
+    DECLARE current AS REAL
+
+    DISPLAY "Current Monitoring System (limit = 10 A)"
+    DISPLAY "Enter current reading (in Amperes):"
+    INPUT current
+
+    WHILE current <= 10 DO
+        DISPLAY current, "A - SAFE"
+        DISPLAY "Enter current reading (in Amperes):"
+        INPUT current
+    END WHILE
+
+    DISPLAY "Overcurrent detected. Monitoring stopped."
+
+END
+```
+
+# Question 9: Current Monitoring System
+## Flowchart (ASCII Text-Based)
+
+```
+        +------------------+
+        |      START       |
+        +------------------+
+                 |
+                 v
+        +---------------------------+
+        | INPUT current (A)         |
+        +---------------------------+
+                 |
+                 v
+        +------------------+
+        | current <= 10 ?  |---NO---> [ DISPLAY "Overcurrent detected.
+        +------------------+           Monitoring stopped." ]
+                 | YES                          |
+                 v                              v
+        +---------------------------+  +------------------+
+        | DISPLAY current, "SAFE"   |  |       END        |
+        +---------------------------+  +------------------+
+                 |
+                 v
+        +---------------------------+
+        | INPUT next current (A)    |
+        +---------------------------+
+                 |
+                 (back to current <= 10 check)
+```
