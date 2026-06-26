@@ -1,0 +1,123 @@
+/* Cable Temperature Warning System*/
+
+#include <iostream>
+using namespace std;
+
+int main(){
+	
+	double temp;
+	cout << "Enter cable temperature in degree Celsius: ";
+	cin >> temp;
+	
+	if (temp > 70) {
+		cout << "Cable overheating detected";
+	}
+	else {
+		cout << "Cable temperature is within safe range";
+	}
+	
+	return 0;
+}
+
+# Question 2: Current Overload Checker
+## Algorithm
+
+**Step 1:** START
+
+**Step 2:** Display program title: "Current Overload Checker"
+
+**Step 3:** Declare variables: `ratedCurrent` and `measuredCurrent` as type double
+
+**Step 4:** Prompt user: "Enter the rated current of the circuit breaker (in Amperes):"
+
+**Step 5:** Read `ratedCurrent`
+
+**Step 6:** Prompt user: "Enter the measured current in the circuit (in Amperes):"
+
+**Step 7:** Read `measuredCurrent`
+
+**Step 8:** Display both values with labels and units
+
+**Step 9:** Compare measuredCurrent with ratedCurrent:
+   - IF measuredCurrent > ratedCurrent THEN
+       - Display: "Overload detected. Circuit breaker should trip."
+   - ELSE
+       - Display: "Current is within safe limit."
+
+**Step 10:** END
+
+# Question 2: Current Overload Checker
+## Pseudocode
+
+```
+BEGIN
+
+    DECLARE ratedCurrent AS REAL
+    DECLARE measuredCurrent AS REAL
+
+    DISPLAY "Current Overload Checker"
+    DISPLAY "Enter the rated current of the circuit breaker (in Amperes):"
+    INPUT ratedCurrent
+
+    DISPLAY "Enter the measured current in the circuit (in Amperes):"
+    INPUT measuredCurrent
+
+    DISPLAY "Rated Current   :", ratedCurrent, "A"
+    DISPLAY "Measured Current:", measuredCurrent, "A"
+
+    IF measuredCurrent > ratedCurrent THEN
+        DISPLAY "Overload detected. Circuit breaker should trip."
+    ELSE
+        DISPLAY "Current is within safe limit."
+    END IF
+
+END
+```
+# Question 2: Current Overload Checker
+## Flowchart (ASCII Text-Based)
+
+```
+        +------------------+
+        |      START       |
+        +------------------+
+                 |
+                 v
+        +-----------------------------+
+        | DECLARE ratedCurrent        |
+        | DECLARE measuredCurrent     |
+        +-----------------------------+
+                 |
+                 v
+        +-----------------------------+
+        | INPUT ratedCurrent (A)      |
+        +-----------------------------+
+                 |
+                 v
+        +-----------------------------+
+        | INPUT measuredCurrent (A)   |
+        +-----------------------------+
+                 |
+                 v
+        +-----------------------------+
+        | DISPLAY both current values |
+        +-----------------------------+
+                 |
+                 v
+        +--------------------------------+
+        | measuredCurrent > ratedCurrent |
+        +--------------------------------+
+           YES |               | NO
+               v               v
+  +----------------------+   +---------------------------+
+  | DISPLAY "Overload    |   | DISPLAY "Current is       |
+  | detected. Circuit    |   | within safe limit."       |
+  | breaker should trip."|   +---------------------------+
+  +----------------------+               |
+               |                         |
+               +-------------------------+
+                          |
+                          v
+                 +------------------+
+                 |       END        |
+                 +------------------+
+```
