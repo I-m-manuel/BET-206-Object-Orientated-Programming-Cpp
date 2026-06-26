@@ -1,0 +1,91 @@
+/*Calculator Total Energy for Appliances*/
+
+#include <iostream>
+using namespace std;
+
+int main(){
+	
+	double power, time, totalEnergy = 0;
+	for(int i =1; i <= 8; i++) {
+		cout << "Appliance " << i << "- Enter power (W) and time (h):";
+		cin >> power >> time;
+		totalEnergy += (power * time);
+	}
+	cout << "Total energy consumed: " << totalEnergy << "Wh" << endl;
+	
+	
+	return 0;
+}
+
+# Question 10: Battery Voltage Monitoring
+## Algorithm
+
+**Step 1:** START
+
+**Step 2:** Declare `voltage` as double
+
+**Step 3:** Display title and minimum voltage (12 V)
+
+**Step 4:** Input first battery voltage reading
+
+**Step 5:** WHILE voltage >= 12 DO:
+   - Display "Voltage OK"
+   - Input next voltage reading
+
+**Step 6:** After loop (voltage < 12):
+   - Display "Battery voltage low. Recharge required."
+
+**Step 7:** END
+
+# Question 10: Battery Voltage Monitoring
+## Pseudocode
+
+```
+BEGIN
+
+    DECLARE voltage AS REAL
+
+    DISPLAY "Battery Voltage Monitoring (minimum = 12 V)"
+    DISPLAY "Enter battery voltage reading (in Volts):"
+    INPUT voltage
+
+    WHILE voltage >= 12 DO
+        DISPLAY voltage, "V - OK"
+        DISPLAY "Enter battery voltage reading (in Volts):"
+        INPUT voltage
+    END WHILE
+
+    DISPLAY "Battery voltage low. Recharge required."
+
+END
+```
+# Question 10: Battery Voltage Monitoring
+## Flowchart (ASCII Text-Based)
+
+```
+        +------------------+
+        |      START       |
+        +------------------+
+                 |
+                 v
+        +---------------------------+
+        | INPUT voltage (V)         |
+        +---------------------------+
+                 |
+                 v
+        +------------------+
+        | voltage >= 12 ?  |---NO---> [ DISPLAY "Battery voltage low.
+        +------------------+           Recharge required." ]
+                 | YES                          |
+                 v                              v
+        +---------------------------+  +------------------+
+        | DISPLAY voltage, "OK"     |  |       END        |
+        +---------------------------+  +------------------+
+                 |
+                 v
+        +---------------------------+
+        | INPUT next voltage (V)    |
+        +---------------------------+
+                 |
+                 (back to voltage >= 12 check)
+```
