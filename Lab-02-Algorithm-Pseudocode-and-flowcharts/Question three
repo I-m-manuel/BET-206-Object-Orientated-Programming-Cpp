@@ -1,0 +1,99 @@
+/*Motor Starting Current Checker*/
+
+#include <iostream>
+using namespace std;
+	
+	int main(){
+		
+		double ratedCurrent, startingCurrent;
+		cout << "Enter rated current of motor (A):";
+		cin >> ratedCurrent;
+		cout << "Enter starting current (A):";
+		cin >> startingCurrent;
+		
+		if (startingCurrent > 3 * ratedCurrent) {
+			cout << "High starting current. Use proper motor starter";
+		}
+		else {
+			cout << "Starting current is acceptable";
+		}
+		
+		return 0;
+	}
+
+# Question 3: Scholarship Eligibility for Engineering Student
+## Algorithm
+
+**Step 1:** START
+
+**Step 2:** Display program title: "Scholarship Eligibility Checker"
+
+**Step 3:** Declare a variable called `gpa` as type double
+
+**Step 4:** Prompt user: "Enter your GPA (0.0 - 4.0):"
+
+**Step 5:** Read the value of `gpa`
+
+**Step 6:** Check if gpa is greater than or equal to 3.5:
+   - IF YES → Display "Eligible for engineering scholarship."
+   - ELSE → Display "Not eligible for engineering scholarship."
+
+**Step 7:** END
+
+# Question 3: Scholarship Eligibility for Engineering Student
+## Pseudocode
+
+```
+BEGIN
+
+    DECLARE gpa AS REAL
+
+    DISPLAY "Scholarship Eligibility Checker"
+    DISPLAY "Enter your GPA (0.0 - 4.0):"
+    INPUT gpa
+
+    IF gpa >= 3.5 THEN
+        DISPLAY "Eligible for engineering scholarship."
+    ELSE
+        DISPLAY "Not eligible for engineering scholarship."
+    END IF
+
+END
+```
+# Question 3: Scholarship Eligibility for Engineering Student
+## Flowchart (ASCII Text-Based)
+
+```
+        +------------------+
+        |      START       |
+        +------------------+
+                 |
+                 v
+        +------------------+
+        | DECLARE gpa      |
+        +------------------+
+                 |
+                 v
+        +---------------------------+
+        | INPUT gpa (0.0 to 4.0)   |
+        +---------------------------+
+                 |
+                 v
+        +------------------+
+        |   gpa >= 3.5 ?   |
+        +------------------+
+           YES |        | NO
+               v        v
+  +--------------------+  +------------------------------+
+  | DISPLAY "Eligible  |  | DISPLAY "Not eligible for    |
+  | for engineering    |  | engineering scholarship."    |
+  | scholarship."      |  +------------------------------+
+  +--------------------+              |
+               |                      |
+               +----------------------+
+                          |
+                          v
+                 +------------------+
+                 |       END        |
+                 +------------------+
+```
